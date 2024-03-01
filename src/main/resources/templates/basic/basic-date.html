@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<span th:text="${#temporals.format(localDateTime, 'yyyy-mm-dd')}"></span>><hr/>
+<span th:text="${#temporals.month(localDateTime)}"></span>
+<hr>
+<span th:text="${#temporals.dayOfWeek(localDateTime)}"></span> <br>
+<span th:text="${#temporals.year(localDateTime)}"></span>
+
+
+</body>
+</html>

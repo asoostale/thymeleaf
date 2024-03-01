@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        tr, th, td{
+            border: 1px solid black;
+        }
+        .title{
+            background: orange;
+            color: darkgreen;
+        }
+
+        .even {
+            background: #dadaf8;
+        }
+
+    </style>
+
+</head>
+<body>
+<table style="width: 300px; height: 300px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;유저정보
+    <tr>
+        <th class="title">id</th>
+        <th class="title">이름</th>
+        <th class="title">나이</th>
+    </tr>
+
+    <tr th:each="user, userStat: ${users}" th:class="${user.id % 2 == 0} ? 'even' ">
+        <td th:text="${user.id}" >id</td>
+        <td th:text="${user.username}">username</td>
+        <td th:text="${user.age}">age</td>
+    </tr>
+</table>
+
+<table style="width: 300px; height: 300px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;유저정보
+    <tr>
+        <th class="title">id</th>
+        <th class="title">이름</th>
+        <th class="title">나이</th>
+    </tr>
+
+    <tr th:each="user, userStat: ${users}" th:class="${user.id % 2 == 0} ? 'even' " th:if="${user.age gt 40}">
+        <td th:text="${user.id}">id</td>
+        <td th:text="${user.username}">username</td>
+        <td th:text="${user.age}">age</td>
+    </tr>
+</table>
+
+
+
+</body>
+</html>

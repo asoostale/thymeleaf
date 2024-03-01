@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Elvis 연산자</h2>
+<ul>
+    <li>${nul}?: '데이터가 없습니다.'<span th:text="${null}?: '데이터가 없습니다.' "></span></li>
+    <li>${name}?: '데이터가 있습니다.'<span style="color: tomato" th:text="${name}?: '[[${name}]]'"></span></li>
+    <li>${name}?: '데이터가 있습니다.'<span style="color: tomato" th:text="${null}?: _ ">찾는 것이 없다!</span></li>
+
+
+
+    <span th:text="${name}?: _"> 찾는 분이 없습니다.</span>
+
+
+</ul>
+
+</body>
+</html>

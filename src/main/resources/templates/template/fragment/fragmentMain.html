@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>부분 포함</h1>
+<h2>부분 포함 insert</h2>
+
+
+<!--~template/fragment/footer << 패키지 경로 지정 -->
+<div th:insert="~{template/fragment/footer :: copy}"></div>
+<h3>insert는 div 태그안에 copy를 집어 넣어버림</h3>
+<hr/>
+
+<h2>부분포함 replace</h2>
+<div th:replace="~{template/fragment/footer :: copy}"></div>
+<h3>replace는 div 태그를 없애고 copy로 대체함</h3>
+<h4>즉 div 태그 없어지고 footer 태그만 있는 것을 확인 할 수 있다.</h4>
+<hr/>
+
+<h2>부분 포함 단순 표현식</h2>
+<div th:replace="template/fragment/footer :: copy"></div>
+<hr/>
+
+<h1>파라미터 사용</h1>
+<div th:replace="template/fragment/footer :: copyParam('주수영', '둘리')"></div>
+
+
+
+
+</body>
+</html>
